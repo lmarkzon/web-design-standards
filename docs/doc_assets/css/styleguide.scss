@@ -1014,3 +1014,28 @@ $font-light: 300;
     padding-left: $site-margins;
   }
 }
+
+// External link styles
+.main-content {
+  [href^="http:"]:not([href*="standards.com"]),
+  [href^="https:"]:not([href*="standards.com"]) {
+    @include external-link(external-link, external-link-hover);
+  }
+}
+
+
+.usa-button {
+  &[href^="http:"]:not([href*="standards.com"]),
+  &[href^="https:"]:not([href*="standards.com"]) {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.usa-styleguide-footer {
+  [href^="http:"]:not([href*="standards.com"]),
+  [href^="https:"]:not([href*="standards.com"]) {
+    @include external-link(external-link-alt, external-link-alt-hover);
+  }
+}
